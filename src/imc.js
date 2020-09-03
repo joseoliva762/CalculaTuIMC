@@ -6,29 +6,51 @@ const man = document.querySelector('button#man');
 const woman = document.querySelector('button#woman');
 let gender = '';
 
-const generateInterpretation = ( imc, bajo, normal, leve, severa) => {
+const generateInterpretation = ( imc, clasification) => {
   let interpretation;
   let title;
   let message;
 
-  if( imc < bajo ){
-    title = 'Ten cuidado', message = `Tienes muy bajo peso`, interpretation = 'warning';
-  } else if ( imc >= bajo && imc < normal ) {
+  if( imc < clasification.severeThinness ){
+    title = 'Ten cuidado', message = `Tienes delgadez severa`, interpretation = 'error';
+  } else if ( imc >= clasification.severeThinness && imc < clasification.moderateThinness ) {
+    title = 'Cuidado', message = `Tienes delgadez moderada`, interpretation = 'warning';
+  } else if ( imc >= clasification.moderateThinness && imc < clasification.slightThinness ) {
+    title = 'Precaución', message = `Tienes delgadez leve`, interpretation = 'info';
+  } else if ( imc >= clasification.slightThinness && imc < clasification.normal ) {
     title = 'Excelente!!', message = `Estas en tu peso ideal`, interpretation = 'success';
-  } else if ( imc >= normal && imc < leve ) {
-    title = 'Ten cuidado', message = `Sufres de obesidad leve`, interpretation = 'warning';
-  } else if ( imc >= leve && imc < severa ) {
-    title = 'Precaución', message = `Sufres de obesidad severa`, interpretation = 'error';
+  } else if ( imc >= clasification.normal && imc < clasification.preObesity ) {
+    title = 'Precaución', message = `Sufres de sobrepeso o pre-obesidad`, interpretation = 'warning';
+  } else if ( imc >= clasification.preObesity && imc < clasification.obesity1 ) {
+    title = 'Cuidado', message = `Sufres de obesidad grado 1 o moderada`, interpretation = 'warning';
+  } else if ( imc >= clasification.obesity1 && imc < clasification.obesity2 ) {
+    title = 'Ten cuidado', message = `Sufres de obesidad grado 2 o severa`, interpretation = 'error';
   } else {
-    title = 'Es hora de hablar con un doctor', message = `Sufres de obesidad muy severa`, interpretation = 'error';
+    title = 'Es hora de hablar con un doctor', message = `Sufres de obesidad grado 3 o mórbida`, interpretation = 'error';
   }
   return [ title, ( message + `,\n tu IMC es de: ${imc.toFixed(4)}.`), interpretation ];
 }
 
 const validateIMC = imc => {
   const [ title, message, interpretation ] = (gender === 'man')
-        ? generateInterpretation( imc, 20, 25, 30, 40)
-        : generateInterpretation( imc, 20, 24, 29, 37);
+        ? generateInterpretation( imc, {
+            severeThinness: 16,
+            moderateThinness: 17,
+            slightThinness: 18.4,
+            normal: 25,
+            preObesity: 30,
+            obesity1: 35,
+            obesity2: 40
+        })
+        : generateInterpretation( imc, {
+            severeThinness: 16,
+            ModerateThinness: 17,
+            slightThinness: 18.4,
+            normal: 24,
+            preObesity: 29,
+            obesity1: 34,
+            obesity2: 37
+        });
   swal(title, message, interpretation);
 }
 
