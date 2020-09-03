@@ -1,0 +1,112 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  color: black;
+  font-family: sans-serif;
+}
+.container {
+  background-color: #232534;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+ background-color: #ebebeb;
+ border-radius: 8px;
+ min-width: 300px;
+ min-height: 500px;
+ width: 20%;
+ height: 60%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.title {
+  margin: 20px auto;
+  color: #505050;
+  transition: 0.5s;
+  font-size: 35px;
+}
+.title:hover{
+  color: #e15e7d;
+}
+.segmentation__section {
+  width: 85%;
+  margin: 10px auto;
+}
+.segmentation__section--title {
+  margin: 0 0 5px 5px;
+  font-weight: bold;
+  font-size: 17.5px;
+  color: #505050;
+}
+.segmentation__section--data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.data__box--input {
+  border: 0.5px solid #f8f8f8;
+  width: 75%;
+  margin-right: 10px;
+  height: 35px;
+  border-radius: 5px;
+  padding: 0 5px;
+  font-size: 14px;
+}
+.data__box--unit{
+  font-size: 14px;
+  color: #8f8f8f;
+  margin: 0;
+}
+.segmentation__section--button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button__selection{
+  border: 0.5px solid #f4f4f4;
+  width: 50%;
+  height: 35px;
+  color: #505050;
+  transition: 0.08s;
+  font-size: 16px;
+}
+.button__selection:hover{
+  background-color: #de6d87;
+  color: white;
+  cursor: pointer;
+}
+.left {
+  border-radius: 5px 0 0 5px;
+}
+.right {
+  border-radius: 0 5px 5px 0;
+}
+.button__calculate {
+  width: 90%;
+  height: 50px;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: #e15e7d;
+  border: none;
+  border-bottom: 2.2px outset #83233a;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.1s;
+}
+.button__calculate:hover {
+  background-color: #de6d87;
+  cursor: pointer;
+}
+.selected__option {
+  background-color: #e15e7d;
+  color: white;
+}
+.swal-modal .swal-text {
+    text-align: center;
+}

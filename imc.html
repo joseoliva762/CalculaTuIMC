@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="static/styles/imc.css">
+  </head>
+  <body>
+      <section class="container">
+        <div class="content">
+            <h1 class="title">Calcula tu IMC</h1>
+            <div class="segmentation__section">
+              <p class="segmentation__section--title">
+                  Sexo
+              </p>
+              <div class="segmentation__section--button">
+                  <button class="button__selection left" id="woman" type="button" name="button">Mujer</button>
+                  <button class="button__selection right" id="man" type="button" name="button">Hombre</button>
+              </div>
+            </div>
+            <div class="segmentation__section">
+              <p class="segmentation__section--title">
+                  Edad
+              </p>
+              <div class="segmentation__section--data">
+                  <input class="data__box--input" id="age" type="text" placeholder="35">
+                  <p class="data__box--unit">Años</p>
+              </div>
+            </div>
+            <div class="segmentation__section">
+              <p class="segmentation__section--title">
+                  Altura
+              </p>
+              <div class="segmentation__section--data">
+                  <input class="data__box--input" id="height" type="text" placeholder="1.60">
+                  <p class="data__box--unit">Mts</p>
+              </div>
+            </div>
+            <div class="segmentation__section">
+              <p class="segmentation__section--title">
+                  Peso
+              </p>
+              <div class="segmentation__section--data">
+                  <input class="data__box--input" id="weight" type="text" placeholder="62.5">
+                  <p class="data__box--unit">Kg</p>
+              </div>
+            </div>
+
+            <button class="button__calculate" id="calculate" type="button" name="button">
+                Calcular
+            </button>
+
+
+        </div>
+      </section>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="src/imc.js"></script>
+  </body>
+</html>
