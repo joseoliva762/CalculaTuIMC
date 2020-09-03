@@ -1,3 +1,4 @@
+"use strict";
 const age = document.getElementById('age');
 const height = document.getElementById('height');
 const weight = document.getElementById('weight');

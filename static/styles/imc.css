@@ -74,6 +74,7 @@ html, body{
   color: #505050;
   transition: 0.08s;
   font-size: 16px;
+  outline: none;
 }
 .button__selection:hover{
   background-color: #de6d87;
@@ -98,6 +99,7 @@ html, body{
   font-weight: bold;
   font-size: 20px;
   transition: 0.1s;
+  outline: none;
 }
 .button__calculate:hover {
   background-color: #de6d87;
@@ -109,4 +111,26 @@ html, body{
 }
 .swal-modal .swal-text {
     text-align: center;
+}
+.swal-button {
+    background-color: #de6d87;
+    color: white;
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 24px;
+    margin: 0;
+    cursor: pointer;
+}
+.swal-button:not([disabled]):hover {
+ background-color:#e15e7d;
+}
+.swal-button:active {
+  background-color:#e15e7d
+}
+.swal-button:focus {
+ outline:none;
+ box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(131,35,58,.25);
 }
