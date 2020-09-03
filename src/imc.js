@@ -44,7 +44,7 @@ const validateIMC = imc => {
         })
         : generateInterpretation( imc, {
             severeThinness: 16,
-            ModerateThinness: 17,
+            moderateThinness: 17,
             slightThinness: 18.4,
             normal: 24,
             preObesity: 29,
